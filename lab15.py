@@ -17,6 +17,9 @@ b = 2
 E = 0.001
 
 func.table(a,b)
+print()
 func.dix(a,b,E)
+print()
+func.newton(a,b,E)
 
 
