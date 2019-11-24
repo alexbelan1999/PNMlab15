@@ -11,6 +11,12 @@ def deriv1(x):
 def deriv2(x):
     return 0.32 * math.sin(0.4 * x + 0.4) / pow(math.cos(0.4 * x + 0.4), 3) - 2
 
+def fi(x):
+    return math.pow(((x+1)/5),(1/3))
+
+def derivfi(x):
+    return 1 / (15 * math.pow(((x+1)/5),(2/3)))
+
 def table(a,b):
     x = []
     y = []
@@ -83,4 +89,26 @@ def chord(a,b,E):
         iter += 1
     print("Корень = ", x1, " с точностью ", E, " количество итераций ", iter)
 
+    pass
+
+def mpi(a,b,E):
+    print("МПИ")
+    iter = 0
+    m = max(derivfi(a),derivfi(b))
+    print("Левый: ", derivfi(a)," Правый: ",derivfi(b)," Максимум: ",m)
+    q = m
+    if q < 1:
+        print("Условие сходимости выполняется: ", q, " < 1")
+    if m == derivfi(a):
+        x = a
+        x_new = b
+    else :
+        x = b
+        x_new = a
+    while abs(x_new - x) >= E:
+        x = x_new
+        x_new = fi(x)
+        print("x=",x," fi(x)= ",x_new)
+        iter += 1
+    print("Корень = ", x_new, " с точностью ", E, " количество итераций ", iter)
     pass
