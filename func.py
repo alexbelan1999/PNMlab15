@@ -98,7 +98,7 @@ def mpi(a,b,E):
     print("Левый: ", derivfi(a)," Правый: ",derivfi(b)," Максимум: ",m)
     q = m
     if q < 1:
-        print("Условие сходимости выполняется: ", q, " < 1")
+        print("Условие сходимости выполняется: ", abs(q), " < 1")
     if m == derivfi(a):
         x = a
         x_new = b

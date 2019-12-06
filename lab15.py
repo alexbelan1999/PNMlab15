@@ -12,7 +12,7 @@ plt.title('График tg(0.4*x+0.4))=x^2')
 plt.grid(True)
 plt.xlabel('x')
 plt.ylabel('y')
-#plt.show()
+plt.show()
 
 a = -1
 b = 2.5
@@ -31,6 +31,7 @@ print()
 
 a = 0.0
 b = 1.0
+func.table(a,b)
 fig1 = plt.figure()
 ax1 = fig1.add_subplot(111)
 x = np.arange(-1.0,1.0,0.01)
